@@ -26,14 +26,15 @@
         alt="">
       <form action="">
         <div class="input">
+          <!-- NOTA: capaz que los span no van, porque las img están en CSS, hay que probar y si queda sacarlos -->
           <span class="glyphicon glyphicon-user"></span>
           <label for="usuario"></label>
-          <input type="text" id="usuario" name="user_name" placeholder="Usuario" />
+          <input type="text" id="usuario" class="login" name="user_name" placeholder="Usuario" />
         </div>
         <div class="input">
           <span class="glyphicon glyphicon-lock"></span>
-          <label for="contraseña"></label>
-          <input type="text" id="contaseña" name="user_name" placeholder="Contraseña" />
+          <label for="contrasena"></label>
+          <input type="password" id="contrasena" class="login" name="user_name" placeholder="Contraseña" />
         </div>
       </form>
       <button id="boton">Inicia sesión</button>
