@@ -18,12 +18,41 @@
 </head>
 
 <body>
-  <div id="container">
+  <!-- Navegador -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido -->
+  <div class="contenedor"> <!-- NOTA: cambié el id por class para poder reutilizar el estilo -->
     <div id="login">
-      <p>¡Bienvenid@!</p>
+
+      <h1>¡Bienvenid@!</h1> <!-- NOTA: cambié el p a h1 para poder reutilizar el estilo -->
       <img id="loginimg"
         src="https://s3-alpha-sig.figma.com/img/c8f1/813d/e9f8dea6d80ba5e3f02d6a640d491a53?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=d2zyyR47~SjZWldh4Pu2cGGXUBk58EWcLMfHiOsvj4ASVSSu1wAzQ0~2RhqhrTaUjp-ZOiZNixUmQvP8zO6q45hkojPRwo-vkbYDrI60M2aVPm3Kyx2pO65OLAnBd6fl~c3sinpg5~iesbQmaha~kLoloVKmrmQdPydU0Myoes1NLuCtZPOU6Qwur55ZulwJD4yUSkfrhcl8lzAi9xwzYbQfPpDPgmCHkQacmVGwaRvlOskkXcgvHR1Oz6iJIZxF-5TUHfsBZrXJLieEJNJJeVm6Ki5PNmtOkvDCJq9~3-nWz4UwzGhKnbJWJsMbZZ2w29iMnWeRVjW6bjZHA5jKvw__"
         alt="">
+
+      <!-- Formulario -->
       <form action="">
         <div class="input">
           <!-- NOTA: capaz que los span no van, porque las img están en CSS, hay que probar y si queda sacarlos -->
@@ -31,16 +60,20 @@
           <label for="usuario"></label>
           <input type="text" id="usuario" class="login" name="user_name" placeholder="Usuario" />
         </div>
+
         <div class="input">
           <span class="glyphicon glyphicon-lock"></span>
           <label for="contrasena"></label>
           <input type="password" id="contrasena" class="login" name="user_name" placeholder="Contraseña" />
         </div>
+
+        <button id="boton">Inicia sesión</button>
       </form>
-      <button id="boton">Inicia sesión</button>
+
     </div>
   </div>
     
+  <!-- Footer -->
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
