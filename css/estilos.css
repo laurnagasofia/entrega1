@@ -89,7 +89,7 @@ input.login {
 }
 
 /* footer */
-footer {
+footer { 
     bottom: 0;
     background-color: #ffffff25;
     width: 100%;
@@ -118,6 +118,7 @@ footer {
     height: auto; /* Mantiene la proporción de la imagen */
     border-bottom: 1px solid #ddd; /* Línea divisoria debajo de la imagen */
     margin-bottom: 10px;
+    border-radius: 20px;
 }
 
 .producto h2 {
@@ -127,6 +128,32 @@ footer {
 
 .producto p {
     font-size: 0.9em;
-    color: #666;
+    color: #4d4d4d;
 }
 
+#titulo_principal h1 {
+    margin-right: 900px;
+    color: #000000;
+    font-size: 80px;
+    text-shadow: 1px 2px 2px #8a8a8a;
+}
+
+.titulo_producto {
+    background-color: #d9d9d9; /* Fondo para los nombres de productos */
+    border-radius: 20px; /* Bordes redondeados */
+    width: 300px;
+    /*Hacer el fondo mas corto de ambos lados (centrado)*/
+}
+
+.precio {
+    background-color: #0CCDA3; /* Fondo para los precios */
+    border-radius: 20px; /* Bordes redondeados */
+    width: 100px;
+    height: 30px;
+    /*Hacer el fondo mas corto de ambos lados (centrado)*/
+}
+ .precio p {
+    color: #fff;
+ }
+
+ /*Achicar letra de Cant. vendidos*/
