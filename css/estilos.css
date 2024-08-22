@@ -50,6 +50,29 @@ input.login {
     border-radius: 20px;
 }
 
+
+.input{
+    position: relative;
+}
+
+input{
+    text-indent: 25px;
+}
+
+#usericon{
+    position: absolute;
+    display: block;
+    left: 15px;
+    top: 33px;
+}
+
+#lockicon{
+    position: absolute;
+    display: block;
+    left: 15px;
+    top: 33px;
+
+}
 /* estos cambian el color de los textos del formulario */
 #usuario::placeholder {
     color: #FFFFFF;
