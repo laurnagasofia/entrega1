@@ -11,6 +11,7 @@
   <link href="css/styles.css" rel="stylesheet">
    <!-- <link href="css/styles.css" rel="stylesheet"> -->
   <link href="css/estilos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -52,15 +53,15 @@
       <form action="">
         <div class="input">
           <!-- NOTA: capaz que los span no van, porque las img están en CSS, hay que probar y si queda sacarlos -->
-          <span class="glyphicon glyphicon-user"></span>
           <label for="usuario"></label>
           <input type="text" id="usuario" class="login" name="user_name" placeholder="Usuario" />
+          <span id="usericon" class="glyphicon glyphicon-user"></span>
         </div>
 
         <div class="input">
-          <span class="glyphicon glyphicon-lock"></span>
           <label for="contrasena"></label>
           <input type="password" id="contrasena" class="login" name="user_name" placeholder="Contraseña" />
+          <span id="lockicon" class="glyphicon glyphicon-lock"></span>
         </div>
 
         <button id="boton">Inicia sesión</button>
