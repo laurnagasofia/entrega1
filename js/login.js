@@ -1,19 +1,18 @@
 document.getElementById('boton').addEventListener('click', function() {
     event.preventDefault();
-    const usuario = document.getElementById('usuario').value;
-    const contrasena = document.getElementById('contrasena').value;
-    const errorMessage = document.getElementById('error-message');
+    let usuario = document.getElementById('usuario').value;
+    let contrasena = document.getElementById('contrasena').value;
+    let errorMessage = document.getElementById('error-message');
 
-    if (usuario === '' || contrasena === '') {
-        errorMessage.textContent = 'Usuario y contraseña no pueden estar vacíos.';
-        return;
-    }
-
-    if (usuario && contrasena) {
+if (usuario && contrasena) {
+        sessionStorage.setItem("loggedIn", "yes")
+        localStorage.setItem("usuario", usuario)
+        localStorage.setItem("contrasena", contrasena)
         errorMessage.textContent = '';
         alert('Acceso concedido');
         document.location.href = 'index.html';
     } else {
-        errorMessage.textContent = 'Usuario o contraseña incorrectos.';
+        errorMessage.textContent = 'Usuario y contraseña no pueden estar vacíos.';
     }
+
 });

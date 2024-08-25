@@ -157,15 +157,15 @@ footer {
 #titulo_principal h1 {
     margin-right: 900px;
     color: #000000;
-    font-size: 80px;
-    text-shadow: 1px 2px 2px #8a8a8a;
+    font-size: 60px;
+    text-shadow: none;
 }
 
 .titulo_producto {
     background-color: #d9d9d9; /* Fondo para los nombres de productos */
     border-radius: 20px; /* Bordes redondeados */
     width: 300px;
-    /*Hacer el fondo mas corto de ambos lados (centrado)*/
+    margin-left: 12px;
 }
 
 .precio {
@@ -173,10 +173,16 @@ footer {
     border-radius: 20px; /* Bordes redondeados */
     width: 100px;
     height: 30px;
-    /*Hacer el fondo mas corto de ambos lados (centrado)*/
+    margin-left: 110px;
+    margin-bottom: 10px;
 }
- .precio p {
+
+.precio p {
     color: #fff;
+    padding-top: 4px;
  }
 
- /*Achicar letra de Cant. vendidos*/
+
+ #navbarNav{
+    margin-left: 180px;
+ }
