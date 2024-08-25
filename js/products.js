@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetchProducts();
-});
+    
+
 
 function fetchProducts() {
     fetch('https://japceibal.github.io/emercado-api/cats_products/101.json')
@@ -29,4 +29,15 @@ function fetchProducts() {
             });
         })
         .catch(error => console.error('Error consultando API:', error));
-}
+
+
+        if (sessionStorage.getItem("loggedIn")){
+            alert("Inicia sesión para acceder a esta página")
+            window.location.href = "login.html"
+        }
+    }
+    fetchProducts();
+        
+    
+
+    });
