@@ -11,4 +11,10 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });
-});
+
+        if (!sessionStorage.getItem("loggedIn")){
+            alert("Inicia sesión para acceder a esta página")
+            window.location.href = "login.html"
+        }
+    
+    });
