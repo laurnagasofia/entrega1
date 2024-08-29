@@ -119,14 +119,16 @@ footer {
     padding: 2vh;
 }
 
-/* codigo de products */
+/*Codigo de products*/
+
+/* lo sacamos porque agregamos bootstrap
 .catalogo {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
-    gap: 2vh; /* Espacio entre los productos */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vh;
     padding: 2vh;
     margin: auto;
-}
+} */
 
 .producto {
     background-color: #fff; /* Fondo blanco para los productos */

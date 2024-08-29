@@ -12,6 +12,9 @@ function fetchProducts() {
             data.products.forEach(product => {
                 const productDiv = document.createElement('div');
                 productDiv.classList.add('producto');
+                productDiv.classList.add('g-4'); // añadir clases de bootstrap
+                productDiv.classList.add('col-md-6'); // añadir clases de bootstrap 
+                productDiv.classList.add('col-xl-4'); // añadir clases de bootstrap
 
                 productDiv.innerHTML = `
                     <img src="${product.image}" alt="${product.name}">
@@ -35,9 +38,10 @@ function fetchProducts() {
             alert("Inicia sesión para acceder a esta página")
             window.location.href = "login.html"
         }
+        
     }
     fetchProducts();
-        
+
     
 
     });
