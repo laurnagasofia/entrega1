@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
 
-
 function fetchProducts() {
     fetch('https://japceibal.github.io/emercado-api/cats_products/101.json')
         .then(response => response.json())
@@ -38,6 +37,20 @@ function fetchProducts() {
         .catch(error => console.error('Error consultando API:', error));
         
     }
+
     fetchProducts();
 
  });
+    fetchProducts();    
+    
+});
+
+//Mostrar Usuario
+window.addEventListener('DOMContentLoaded', () => {
+    let usuario = localStorage.getItem("usuario");
+    if (usuario) {
+        document.getElementById('mostrarUsuario').textContent = usuario;
+    } else {
+        document.getElementById('mostrarUsuario').textContent = 'No has iniciado sesión';
+    }
+});
