@@ -1,3 +1,10 @@
+
+/*Codigo de products*/
+
+#navbarNav{
+    margin-left: 180px;
+ }
+
 /* color de fondo */
 body {
     background-color: #BCFCBA;
@@ -5,121 +12,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
-/* contenedor sin footer */
-.contenedor {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 15vh;
-}
-
-/* texto bienvenid@ */
-h1 {
-    color: #FFFFFF;
-    font-size: 225%;
-    text-shadow: 1px 2px 2px #b8b8b8;
-    margin: auto
-}
-
-/* cuadro gris */
-#login {
-    display: grid;
-    place-items: center;
-    width: 55vh;
-    height: 70vh;
-    background-color: #DFDFDF;
-    border-radius: 20px;
-}
-
-/* img */
-#loginimg {
-    width: 131px;
-    height: 131px;
-}
-
-/* formulario NOTA: cambiar las url de las imagenes*/
-input.login {
-    width: 100%;
-    padding: 8px 12px;
-    background-color: #CBCBCB;
-    border-color: transparent;
-    box-sizing: border-box;
-    border-radius: 20px;
-}
-
-
-.input{
-    position: relative;
-}
-
-input{
-    text-indent: 25px;
-}
-
-#usericon{
-    position: absolute;
-    display: block;
-    left: 15px;
-    top: 33px;
-}
-
-#lockicon{
-    position: absolute;
-    display: block;
-    left: 15px;
-    top: 33px;
-
-}
-/* estos cambian el color de los textos del formulario */
-#usuario::placeholder {
-    color: #FFFFFF;
-}
-
-#contrasena::placeholder {
-    color: #FFFFFF;
-}
-
-/* estos cambian los iconos */
-#usuario input {
-    background-image: url('searchicon.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-}
-
-#contrasena input {
-    background-image: url('searchicon.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-}
-
-
-/* boton */
-#boton {
-    width: 25vh;
-    height: 6vh;
-    margin: 4vh;
-    background-color: #0CCDA3;
-    color: #FFFFFF;
-    border-color: transparent;
-    border-radius: 20px;
-    font-size: 150%;
-    text-shadow: 1px 1px 2px #777777;
-}
-
-/* footer */
-footer { 
-    bottom: 0;
-    background-color: #ffffff25;
-    width: 100%;
-    padding: 2vh;
-}
-
-/*Codigo de products*/
 
 /* lo sacamos porque agregamos bootstrap
 .catalogo {
@@ -130,13 +22,22 @@ footer {
     margin: auto;
 } */
 
-.producto {
-    background-color: #fff; /* Fondo blanco para los productos */
-    border: 1px solid #ddd; /* Borde gris claro */
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 15px; /* Espacio interno */
+/*.producto {
+    background-color: #fff; Fondo blanco para los productos 
+    border: 1px solid #ddd;  Borde gris claro 
+    border-radius: 20px; /* Bordes redondeados 
+    padding: 15px; /* Espacio interno 
     text-align: center;
+}*/
+
+#titulo_principal h1 {
+    margin-right: 900px;
+    color: #000000;
+    font-size: 60px;
+    text-shadow: none;
 }
+
+/*Tarjeta de Bootstrap*/
 
 .producto img {
     width: 100%; /* Ancho completo del contenedor del producto */
@@ -146,28 +47,27 @@ footer {
     border-radius: 20px;
 }
 
+.titulo_producto {
+    background-color: #d9d9d9; /* Fondo para los nombres de productos */
+    border-radius: 20px; /* Bordes redondeados */
+    width: 300px;
+    height: 30px;
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+
 .producto h2 {
+    color: #FFFFFF;
     font-size: 1.2em;
-    margin: 10px 0;
+    margin: 8px 0px;
+    position: relative;
+    text-align: center;
 }
 
 .producto p {
     font-size: 0.9em;
     color: #4d4d4d;
-}
-
-#titulo_principal h1 {
-    margin-right: 900px;
-    color: #000000;
-    font-size: 60px;
-    text-shadow: none;
-}
-
-.titulo_producto {
-    background-color: #d9d9d9; /* Fondo para los nombres de productos */
-    border-radius: 20px; /* Bordes redondeados */
-    width: 300px;
-    margin-left: 12px;
+    text-align: center;
 }
 
 .precio {
@@ -175,7 +75,7 @@ footer {
     border-radius: 20px; /* Bordes redondeados */
     width: 100px;
     height: 30px;
-    margin-left: 110px;
+    margin-left: 140px;
     margin-bottom: 10px;
 }
 
@@ -184,7 +84,10 @@ footer {
     padding-top: 4px;
  }
 
-
- #navbarNav{
-    margin-left: 180px;
- }
+/* footer */
+footer { 
+    bottom: 0;
+    background-color: #ffffff25;
+    width: 100%;
+    padding: 2vh;
+}

@@ -17,31 +17,27 @@ function fetchProducts() {
                 productDiv.classList.add('col-xl-4'); // añadir clases de bootstrap
 
                 productDiv.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <div class="titulo_producto">
-                        <h2>${product.name}</h2>
+                <div class="card rounded-6">
+                    <div class="card-body">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="titulo_producto">
+                            <h2>${product.name}</h2>
+                        </div>
+                            <p>${product.description}</p>
+                        <div class="precio">
+                            <p>${product.currency}${product.cost}</p>
+                        </div>
+                        <p>Cant. vendidos: ${product.soldCount}</p>
                     </div>
-                    <p>${product.description}</p>
-                    <div class="precio">
-                        <p>${product.currency}${product.cost}</p>
-                    </div>
-                    <p>Cant. vendidos: ${product.soldCount}</p>
+                </div>
                 `;
 
                 container.appendChild(productDiv);
             });
         })
         .catch(error => console.error('Error consultando API:', error));
-
-
-        if (sessionStorage.getItem("loggedIn")){
-            alert("Inicia sesión para acceder a esta página")
-            window.location.href = "login.html"
-        }
         
     }
     fetchProducts();
 
-    
-
-    });
+ });
