@@ -40,17 +40,16 @@ function fetchProducts() {
 
     fetchProducts();
 
- });
-    fetchProducts();    
-    
-});
-
 //Mostrar Usuario
-window.addEventListener('DOMContentLoaded', () => {
     let usuario = localStorage.getItem("usuario");
     if (usuario) {
         document.getElementById('mostrarUsuario').textContent = usuario;
     } else {
         document.getElementById('mostrarUsuario').textContent = 'No has iniciado sesión';
     }
-});
+ });
+    fetchProducts();    
+    
+
+
+
