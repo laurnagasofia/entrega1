@@ -19,7 +19,7 @@ function fetchProducts() {
                 <div class="card rounded-6">
                     <div class="card-body">
                         <img src="${product.image}" alt="${product.name}">
-                        <div class="titulo_producto">
+                        <div class="titulo-producto">
                             <h2>${product.name}</h2>
                         </div>
                             <p>${product.description}</p>
@@ -43,12 +43,11 @@ function fetchProducts() {
 //Mostrar Usuario
     let usuario = localStorage.getItem("usuario");
     if (usuario) {
-        document.getElementById('mostrarUsuario').textContent = usuario;
+        document.getElementById('mostrar-usuario').textContent = usuario;
     } else {
-        document.getElementById('mostrarUsuario').textContent = 'No has iniciado sesión';
+        document.getElementById('mostrar-usuario').textContent = 'No has iniciado sesión';
     }
  });
-    fetchProducts();    
     
 
 
