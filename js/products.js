@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonPrecioAsc = document.getElementById('precio-ascendente');
     const botonPrecioDesc = document.getElementById('precio-descendente');
     const botonRelevancia = document.getElementById('ordenar-relevancia');
+    const buscadorInput = document.getElementById('buscador');
 
     let products = []; // almacena la lista de productos que se van a obtener de la API
 
@@ -51,6 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function filtrarYOrdenarProducts(ordenamiento = null) {
         let productsFiltrados = products;
+
+        // filtrar por buscador
+        const buscador = buscadorInput.value.toLowerCase();
+        if (buscador) {
+            productsFiltrados = productsFiltrados.filter(product => {
+                return product.name.toLowerCase().includes(buscador) || product.description.toLowerCase().includes(buscador);
+            });
+        }
 
         // filtrar por precios
         const minPrecio = parseFloat(minPrecioInput.value);
@@ -102,6 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     botonRelevancia.addEventListener('click', () => {
         filtrarYOrdenarProducts('vendidos-desc'); // ordenar por relevancia
+    });
+
+    buscadorInput.addEventListener('input', () => {
+        filtrarYOrdenarProducts(); // buscador
     });
 
     // Inicializar los productos al cargar la página
