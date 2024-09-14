@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+let catID = localStorage.getItem('catID')
 
 function fetchProducts() {
-    fetch('https://japceibal.github.io/emercado-api/cats_products/101.json')
+    fetch('https://japceibal.github.io/emercado-api/cats_products/' + catID + '.json')
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('productos-container');
-            container.innerHTML = ''; 
+            container.innerHTML = `
+                <h1>${data.catName}</h1>
+                <hr>
+                `; 
 
             data.products.forEach(product => {
                 const productDiv = document.createElement('div');
@@ -16,19 +20,19 @@ function fetchProducts() {
                 productDiv.classList.add('col-xl-4'); // añadir clases de bootstrap
 
                 productDiv.innerHTML = `
-                <div class="card rounded-6">
-                    <div class="card-body">
-                        <img src="${product.image}" alt="${product.name}">
-                        <div class="titulo-producto">
-                            <h2>${product.name}</h2>
+                    <div class="card rounded-6">
+                        <div class="card-body">
+                            <img src="${product.image}" alt="${product.name}">
+                            <div class="titulo-producto">
+                                <h2>${product.name}</h2>
+                            </div>
+                                <p>${product.description}</p>
+                            <div class="precio">
+                                <p>${product.currency}${product.cost}</p>
+                            </div>
+                            <p>Cant. vendidos: ${product.soldCount}</p>
                         </div>
-                            <p>${product.description}</p>
-                        <div class="precio">
-                            <p>${product.currency}${product.cost}</p>
-                        </div>
-                        <p>Cant. vendidos: ${product.soldCount}</p>
                     </div>
-                </div>
                 `;
 
                 container.appendChild(productDiv);
