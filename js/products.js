@@ -109,15 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchProducts(); // recargar los productos sin filtrar
     }
 
-    function busqueda(){ 
-        if (product.name.toLowerCase().includes(barra.target.value) || product.description.toLowerCase().includes(barra.target.value)){
-            return(product.name.toLowerCase(barra.target.value) || product.description.toLowerCase(barra.target.value)
+     //busqueda de productos 
+     function busqueda(){ 
+        
+        if (product.name.toLowerCase().includes(barrabusqueda.target.value) || product.description.toLowerCase().includes(barrabusqueda.target.value)){
+            return(product.name.toLowerCase(barrabusqueda.target.value) || product.description.toLowerCase(barrabusqueda.target.value))
         }
 
-     barra.addEventListener("input", () => {
-         busqueda();
-     })
-
+    };
         
     // event listeners para aplicar filtros y orden
     filterButton.addEventListener('click', () => {
@@ -143,6 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
     buscadorInput.addEventListener('input', () => {
         filtrarYOrdenarProducts(); // buscador
     });
+
+    barrabusqueda.addEventListener("input", () => {
+        busqueda();
+    }) // busqueda
 
     // Inicializar los productos al cargar la página
     fetchProducts();
