@@ -47,6 +47,50 @@
   <div class="container" id="contenido-products">
 
 
+   <!-- Filtros y orden -->
+   <div class="container">
+    <!-- Orden -->
+    <div class="row">
+      <div class="col text-end">
+        <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+          <input type="radio" class="btn-check" name="options" id="precio-ascendente">
+          <label class="btn btn-light" for="precio-ascendente">&darr;$</label>
+          <input type="radio" class="btn-check" name="options" id="precio-descendente">
+          <label class="btn btn-light" for="precio-descendente">&uarr;$</label>
+          <input type="radio" class="btn-check" name="options" id="ordenar-relevancia" checked>
+          <label class="btn btn-light" for="ordenar-relevancia" class="fas fa-sort-amount-down mr-1">&darr;Rel.</label>
+        </div>
+      </div>
+    </div>
+    <!-- Buscador -->
+    <div class="col-12 mb-3">
+      <input class="form-control" type="search" placeholder="Buscar" id="buscador">
+    </div>
+    <!-- Filtros de precio -->
+    <div class="row">
+      <div class="col-lg-6 offset-lg-6 col-md-12 mb-1">
+        <div class="row container p-0 m-0">
+          <div class="col">
+            <p class="font-weight-normal text-end my-2">Precio</p>
+          </div>
+          <div class="col">
+            <input class="form-control" type="number" placeholder="min." id="min-precio">
+          </div>
+          <div class="col">
+            <input class="form-control" type="number" placeholder="máx." id="max-precio">
+          </div>
+          <div class="col-3 p-0">
+            <div class="btn-group" role="group">
+              <button class="btn btn-light btn-block" id="boton-filtrar">Filtrar</button>
+              <button class="btn btn-link btn-sm" id="boton-limpiar">Limpiar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
     <div class="row" id="productos-container" class="catalogo">
 
     </div>
