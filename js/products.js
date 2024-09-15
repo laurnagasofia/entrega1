@@ -1,60 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-let catID = localStorage.getItem('catID')
-
-function fetchProducts() {
-    fetch('https://japceibal.github.io/emercado-api/cats_products/' + catID + '.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('productos-container');
-        container.innerHTML = `
-        <h1>${data.catName}</h1>
-        <hr> 
-        `; 
-
-        data.products.forEach(product => {
-            const productDiv = document.createElement('div');
-            productDiv.classList.add('producto');
-            productDiv.classList.add('g-4'); // añadir clases de bootstrap
-            productDiv.classList.add('col-md-6'); // añadir clases de bootstrap 
-            productDiv.classList.add('col-xl-4'); // añadir clases de bootstrap
-
-            productDiv.innerHTML = `
-            <div class="card rounded-6">
-                <div class="card-body">
-                    <img src="${product.image}" alt="${product.name}">
-                    <div class="titulo_producto">
-                        <h2>${product.name}</h2>
-                    </div>
-                        <p>${product.description}</p>
-                    <div class="precio">
-                        <p>${product.currency}${product.cost}</p>
-                    </div>
-                    <p>Cant. vendidos: ${product.soldCount}</p>
-                </div>
-            </div>
-            `;
-
-            container.appendChild(productDiv);
-        });
-    })
-    .catch(error => console.error('Error consultando API:', error));
-    
-}
-
-fetchProducts();
-
-
-//Mostrar Usuario
-let usuario = localStorage.getItem("usuario");
-if (usuario) {
-    document.getElementById('mostrarUsuario').textContent = usuario;
-} else {
-    document.getElementById('mostrarUsuario').textContent = 'No has iniciado sesión';
-}
-fetchProducts();    
-
-                            
     const minPrecioInput = document.getElementById('min-precio');
     const maxPrecioInput = document.getElementById('max-precio');
     const filterButton = document.getElementById('boton-filtrar');
@@ -64,6 +8,61 @@ fetchProducts();
     const botonRelevancia = document.getElementById('ordenar-relevancia');
     const buscadorInput = document.getElementById('buscador');
 
+    let products = []; // almacena la lista de productos que se van a obtener de la API
+
+    const catID = localStorage.getItem("catID");
+
+    // solicitud HTTP a la URL de la API para obtener datos JSON
+    function fetchProducts() {
+        fetch('https://japceibal.github.io/emercado-api/cats_products/' + catID + '.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('productos-container');
+            const tituloPrincipal = document.getElementById('titulo-principal');
+            tituloPrincipal.innerHTML = `
+                <h1>${data.catName}</h1>
+                <hr>
+            `;
+
+            products = data.products; // se almacenan los datos en la variable creada antes
+            cargarProducts(products); // muestra los productos en la página
+        })
+        .catch(error => console.error('Error consultando API:', error));
+    }
+
+    // muestra la lista de productos en el contenedor
+    function cargarProducts(mostrarProducts) {
+        const container = document.getElementById('productos-container');
+        container.innerHTML = ''; // limpia el contenedor
+        
+        if (mostrarProducts.length === 0) {
+            container.innerHTML = '<p class="text-center">No hay productos disponibles en esta categoría por ahora.</p>';
+            return;
+        }
+        
+        mostrarProducts.forEach(product => {
+            const divProduct = document.createElement('div');
+            divProduct.classList.add('producto', 'g-4', 'col-md-6', 'col-xl-4'); // añadir clases de bootstrap
+
+            divProduct.innerHTML = `
+                <div class="card rounded-6">
+                    <div class="card-body">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="titulo-producto">
+                            <h2>${product.name}</h2>
+                        </div>
+                        <p>${product.description}</p>
+                        <div class="precio">
+                            <p>${product.currency}${product.cost}</p>
+                        </div>
+                        <p>Cant. vendidos: ${product.soldCount}</p>
+                    </div>
+                </div>
+            `;
+
+            container.appendChild(divProduct);
+        });
+    }
 
     function filtrarYOrdenarProducts(ordenamiento = null) {
         let productsFiltrados = products;
@@ -132,4 +131,14 @@ fetchProducts();
         filtrarYOrdenarProducts(); // buscador
     });
 
+    // Inicializar los productos al cargar la página
+    fetchProducts();
+
+    // Mostrar usuario
+    let usuario = localStorage.getItem("usuario");
+    if (usuario) {
+        document.getElementById('mostrar-usuario').textContent = usuario;
+    } else {
+        document.getElementById('mostrar-usuario').textContent = 'No has iniciado sesión';
+    }
 });
