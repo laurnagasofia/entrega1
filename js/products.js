@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonPrecioDesc = document.getElementById('precio-descendente');
     const botonRelevancia = document.getElementById('ordenar-relevancia');
     const buscadorInput = document.getElementById('buscador');
+    const barrabusqueda=document.getElementByid('barra');
+
+    
 
     let products = []; // almacena la lista de productos que se van a obtener de la API
 
@@ -106,6 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchProducts(); // recargar los productos sin filtrar
     }
 
+    function busqueda(){ 
+        if (product.name.toLowerCase().includes(barra.target.value) || product.description.toLowerCase().includes(barra.target.value)){
+            return(product.name.toLowerCase(barra.target.value) || product.description.toLowerCase(barra.target.value)
+        }
+
+     barra.addEventListener("input", () => {
+         busqueda();
+     })
+
+        
     // event listeners para aplicar filtros y orden
     filterButton.addEventListener('click', () => {
         filtrarYOrdenarProducts(); // aplicar filtro sin cambiar el orden
@@ -141,4 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         document.getElementById('mostrar-usuario').textContent = 'No has iniciado sesión';
     }
+    
+    
 });
