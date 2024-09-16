@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
             divProduct.innerHTML = `
                 <div class="card rounded-6">
                     <div class="card-body">
-                        <img src="${product.image}" alt="${product.name}">
+                        <a href="product-info.html"><img src="${product.image}" alt="${product.name}"></a>
                         <div class="titulo-producto">
                             <h2>${product.name}</h2>
                         </div>
-                        <p>${product.description}</p>
+                         <a href="product-info.html"><p>${product.description}</p></a>
                         <div class="precio">
                             <p>${product.currency}${product.cost}</p>
                         </div>
