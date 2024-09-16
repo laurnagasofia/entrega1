@@ -188,3 +188,27 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+/*Estilos product-info*/
+
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  margin-right: 827px;
+}
+
+div.scroll-container img {
+  width: 600px;
+  padding: 10px;
+}
+
+.productinfo {
+  position: absolute;
+  margin-left: 900px;
+}
+
+h1{
+  margin-left: 250px;
+}
